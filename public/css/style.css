@@ -1,0 +1,53 @@
+body {
+  background-color: #faf6ed;
+  color: #222;
+}
+.navbar {
+  background-color: #fb5;
+}
+.navbar a{
+  color: #222;
+  font-weight: 700;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.titulo {
+  text-align: center;
+}
+.titulo h1 {
+  font-family: 'Playfair Display SC', serif;
+  color: #222;
+  text-transform: uppercase;
+}
+.titulo h3, label{
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+.box-card {
+  border: 1px solid rgba(0,0,0,.4);
+}
+
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+.btn-primary {
+  background-color: #e54;
+  border: #e54;
+}
+.btn-primary:hover {
+  background-color: rgba(226, 54, 35, 0.87);
+  border-color: rgba(226, 54, 35, 0.87);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 63, 38, 0.5);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  background-color: rgba(226, 54, 35, 0.87);
+  border-color: rgba(226, 54, 35, 0.87);
+}

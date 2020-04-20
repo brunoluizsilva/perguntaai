@@ -1,0 +1,87 @@
+- tecnologias utilizadas: node, express, mysql, EJS(exibir html no node).
+- iniciar um projeto em node: npm init  (vai gerar o arquivo package.json)
+- criar o arquivo index.js
+- instalar o express: npm install express --save
+- instalar o EJS: npm install ejs --save
+
+- const express = require("express") //importando o modulo express
+- const app = express(); // criando uma instancia do express
+- app.set('view engine', 'ejs'); // o express irá usar o EJS como view engine (renderizador de html)
+- criar pasta para salvar os arquivos html: views (obrigatorio) (salvar com .ejs)
+- res.render("index") //ira desenhar a index.ejs
+- exibindo variaveis no html: <%= %> 
+- utilizando condicionais no ejs:
+  - if:
+    <% if(msg){ %>
+      <h3>Isso é uma msg de erro!</h3>
+    <% } %>
+  - else:
+    <% if(msg){ %>
+      <h3>Nenhum Erro!</h3>
+    <% } else { %>
+      <h3>Msg Erro!</h3>
+    <% } %>
+
+- utilizando repetições no ejs:
+  - for:
+    <% produtos.forEach((produto) => { %>
+      <p><%= produto.nome %> : R$<%= produto.preco %> </p>
+    
+    <% }) %>
+
+- utilizar arquivos estáticos: app.use(express.static('public')); 
+
+- apresentando/utilizando bootstrap:
+  - fazer download do bootstrap com css e js
+  - linkar jquery, popper e js no final da pagina.
+
+- reutilizar html com partials: 
+  Exemplo: <%- include ('partials/header.ejs') %>
+
+- envio de formulario para o node: 
+  - incluir method: POST no form,
+  - definir a rota:
+    app.post("/salvarpergunta", ((req, res) => {
+      res.send("Formulário recebido!");
+    }))
+  - incluir action: action="/salvarpergunta"
+
+- capturar dados de um formulário:
+  - instalar biblioteca: npm install body-parser --save
+  - importar a biblioteca: 
+  - configurar a biblioteca:
+
+- download do mysql workbench
+
+- instalação do sequelize: npm install --save sequelize
+- biblioteca: npm install --save mysql2
+
+- conectar sequelize com o mysql:
+  - criação pasta database e arquivo database.js
+  - importar o sequelize:
+    const sequelize = require("sequelize"); //importar o sequelize
+  - criar o banco de dados no mysql workbench: pergunta_ai
+  - conectar o sequelize:
+    const connection = new sequelize('pergunta_ai', 'root', 'bruno', {
+      host: 'localhost',
+      dialect: 'mysql'
+    })
+  - exportar a conexão: module.exports = connection;
+  - importar a conexão no index.js: const connection = require("./database/database") //importando a conexão
+  - 
+  connection
+    .authenticate()
+    .then(() => {
+      console.log("Conexão feita com o banco de dados!")
+    })
+    .catch((erro) => {
+      console.log(erro)
+    })
+  
+    - gerar tabela com model:
+      - criar arquivo Pergunta.js (Primeira letra maiscula para identificar que é um arquivo de model)
+      - importar o model:
+        - const perguntaModel = require("./database/Pergunta") // importando o model Pergunta
+  
+  - salvar dados que vem do formulario no banco de dados:
+  - buscar perguntas no banco de dados
